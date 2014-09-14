@@ -1,33 +1,19 @@
 language: scala
-
 scala:
 - 2.11.2
-
 jdk:
 - oraclejdk7
 - openjdk7
-
-# coverage broken my macros in sbt-scoverage 0.99.7.1
-# should be fixed in next sbt-scoverage release
-#script:
-#- scoverage:test
-#- sbt coveralls
-
 notifications:
   email:
   - nick.edwards.uk@gmail.com
-
 env:
   global:
-  - secure: jE+BdFwTc52+VRuUJB7ms4Gj/ieHadcSxmCP8pOLSF1+M+bBxJKXwPRo6ITIDtcFXlbxwDZJbRQmGPGAk8gMGhc1OR6qGkK8QOm7Ndu/081M8Nc7kO9paoIWkcYTkMwWw+qUxx6PDNhBekQGq3CBsD9kEwGPzj9huXflKzrPKT0=
-  - secure: aRc6llWhPLot0N6sdo7e5576ht/RpeIQD78VIk8FccQA04bw1Stp79Znz625CBlakLAc6bmVLA/rRUqBjYJmaXSUd4BzT9GXZ/MPh3VVqHhWuvvyJWkNRjd/H6DpDpkA0ZhWqqDgdiFwS0PFj842iQafXDMxUiK8m+MOpLV6X1o=
-  - secure: kUpumdsvgL3ReIH8H9ujduSfQcpcHwJLYAcnSqf7+cw0vH1V2OdYj2W8xYGcQYPy4pmnbsMll+a1gnU04Xi9hAh1o/EJ3aBQxIRxPyb0LZLMox0XChrRI2lPZVYivYvV/KrjH/2ZaJjtXon3qXKOaBU6JLWO8TuJJzD2tMUXMLI=
-  - secure: BOBHxZfY7Mstjg3zShSpCppNla39ShYhyEOkhn/Eq529iR7AShLEgfpzPmoTd9W/G7YNGG8W+C4Dtmo+ndNV8k53DuCEut2THFJChMI4kxnBTTcxGDlzMPJvOVgqh+GdzS4kb+xHp7AOs2+25qW9pxu9C3Vzz+qagHec8YNDoRI=
-  - secure: XUWKNjdZ3omZUIFEBmMS5I38lp6M6ybujeXtkDRBf03bNRoya83LK0fF9tYQTixz4n6dVMg9EpufS8l/ZGBPrreYD7zqe8V0DsemUzB2DvWDajaWeG1z8ZAOSoILVTXu71XWEgz13C0u6OUfQqg0A6xbX9VxnqADPwN1H/sPNuA=
-
+  - secure: kasSr4GnvSrBc4QfpZKPQ0WQ5cZnQKKb/KsG7DBgbcil4BbRXZ36hsMUvat+RXqkuKLhBi7Y3mrn26+mBnp21+Inwe4PQp5PxN/s5zyvDLekpXx5cspEsS2S4KNz+Z7o9h2FXNhGtRnX2ILfeQYxUb+zq+4aoxpVRdn/cclIQiA=
+  - secure: CXgtyhHfuk6tZRjFLbLo3Iu39vVt5NwtrmxO3VLW9M32fAvki3YIlpZ7qfXKYUn/QoMrNNP+ZKN/BnbsLZqvgMVerIOR77uUdNhG44w99U1C9G6/7qTiNfF0iAIwwwgtOkJzTlkQbs7vAjHgRY9bRnRQvjwYuZCSoIsI9uC6XUg=
+  - secure: FfoD/vSuDe6ymTvvoVCVHSsl4hx9IpI19xYMm49KLqxLPNjCcDG7R2RlvMfz+U007C0IWmJXL0AMMCu+Pb+mOrDSbYszbawCL5pYtmFk6ML2/enw/0DAJ7/9uRew+ZaZq04RtC0icxP5qLgUUFje2E9fnTCcM+eyjBjat24qTqU=
+  - secure: PdTKUUxl8gaDM02djLE0329rO37LvLeQghJOrLwhHmNrBnqvHYYh5iaWrJ+zCoPvAS4xGU0pyQQep/2ngfsMzMQbjHKYnj6fz3r94VSjo71vgAyTxD2vsgag7pyz3VzadKC4hvPxZJfxeWWabm+oU6RY7nMhRJVW3HrRPMqiWe8=
 after_success:
-  - >
-      test "${TRAVIS_PULL_REQUEST}" = 'false' &&
-      test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7' &&
-      sh "$TRAVIS_BUILD_DIR/script/travis-ci-bintray-credentials.sh" &&
-      sbt 'set version := version.value + "." + System.getenv("TRAVIS_BUILD_NUMBER")' publish
+- test "${TRAVIS_PULL_REQUEST}" = 'false' && test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7'
+  && sh "$TRAVIS_BUILD_DIR/script/travis-ci-bintray-credentials.sh" && sbt 'set version
+  := version.value + "." + System.getenv("TRAVIS_BUILD_NUMBER")' publish
