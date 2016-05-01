@@ -4,7 +4,7 @@ organization := "com.github.njeuk"
 
 description := "Scala Macros used by dbmapper"
 
-version := "2.6"
+version := "2.7"
 
 scalaVersion := "2.11.8"
 
