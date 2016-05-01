@@ -13,6 +13,6 @@ env:
   - secure: FfoD/vSuDe6ymTvvoVCVHSsl4hx9IpI19xYMm49KLqxLPNjCcDG7R2RlvMfz+U007C0IWmJXL0AMMCu+Pb+mOrDSbYszbawCL5pYtmFk6ML2/enw/0DAJ7/9uRew+ZaZq04RtC0icxP5qLgUUFje2E9fnTCcM+eyjBjat24qTqU=
   - secure: PdTKUUxl8gaDM02djLE0329rO37LvLeQghJOrLwhHmNrBnqvHYYh5iaWrJ+zCoPvAS4xGU0pyQQep/2ngfsMzMQbjHKYnj6fz3r94VSjo71vgAyTxD2vsgag7pyz3VzadKC4hvPxZJfxeWWabm+oU6RY7nMhRJVW3HrRPMqiWe8=
 after_success:
-- test "${TRAVIS_PULL_REQUEST}" = 'false' && test "${TRAVIS_JDK_VERSION}" = 'oraclejdk7'
+- test "${TRAVIS_PULL_REQUEST}" = 'false' && test "${TRAVIS_JDK_VERSION}" = 'oraclejdk8'
   && sh "$TRAVIS_BUILD_DIR/script/travis-ci-bintray-credentials.sh" && sbt 'set version
   := version.value + "." + System.getenv("TRAVIS_BUILD_NUMBER")' publish
