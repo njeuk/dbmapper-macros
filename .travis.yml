@@ -1,9 +1,9 @@
 language: scala
 scala:
-- 2.11.2
+- 2.11.8
 jdk:
-- oraclejdk7
-- openjdk7
+- oraclejdk8
+- openjdk8
 notifications:
   email:
   - nick.edwards.uk@gmail.com
