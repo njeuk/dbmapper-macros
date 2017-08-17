@@ -4,31 +4,21 @@ organization := "com.github.njeuk"
 
 description := "Scala Macros used by dbmapper"
 
-version := "2.7"
+version := "3.0"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.12.3"
 
 scalacOptions += "-feature"
 
-instrumentSettings
-
-coverallsSettings
-
 publishMavenStyle := true
-
-bintrayPublishSettings
-
-bintray.Keys.repository in bintray.Keys.bintray := "maven"
 
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))
 
-bintray.Keys.bintrayOrganization in bintray.Keys.bintray := None
-
 libraryDependencies ++= Seq(
-  "com.github.mauricio" %% "postgresql-async" % "0.2.19",
-  "org.scala-lang.modules" %% "scala-async" % "0.9.1",
-  "org.scala-lang" % "scala-reflect" % "2.11.2",
+  "com.github.mauricio" %% "postgresql-async" % "0.2.21",
+  "org.scala-lang.modules" %% "scala-async" % "0.9.7",
+  "org.scala-lang" % "scala-reflect" % "2.12.3",
   "com.vividsolutions" % "jts" % "1.13",
-  "org.scalatest" % "scalatest_2.11" % "2.2.1" % "test"
+  "org.scalatest" % "scalatest_2.12" % "3.0.3" % "test"
 )
 

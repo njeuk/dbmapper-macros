@@ -7,14 +7,14 @@ resolvers += Resolver.url(
   url("http://dl.bintray.com/content/sbt/sbt-plugin-releases"))(
     Resolver.ivyStylePatterns)
 
-addSbtPlugin("me.lessis" % "bintray-sbt" % "0.1.1")
+addSbtPlugin("org.foundweekends" % "sbt-bintray" % "0.5.1")
 
 resolvers += Classpaths.sbtPluginReleases
 
 resolvers += Classpaths.typesafeReleases
 
-addSbtPlugin("org.scoverage" %% "sbt-scoverage" % "0.99.7.1")
+addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.5.0")
 
-addSbtPlugin("org.scoverage" %% "sbt-coveralls" % "0.99.0")
+addSbtPlugin("org.scoverage" %% "sbt-coveralls" % "1.1.0")
 
 resolvers += "jgit-repo" at "http://download.eclipse.org/jgit/maven"
