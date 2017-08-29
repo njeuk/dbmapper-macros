@@ -4,7 +4,7 @@ organization := "com.github.njeuk"
 
 description := "Scala Macros used by dbmapper"
 
-version := "3.1"
+version := "3.4"
 
 scalaVersion := "2.12.3"
 
@@ -15,7 +15,6 @@ publishMavenStyle := true
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))
 
 libraryDependencies ++= Seq(
-  "com.github.mauricio" %% "postgresql-async" % "0.2.21",
   "org.scala-lang.modules" %% "scala-async" % "0.9.7",
   "org.scala-lang" % "scala-reflect" % "2.12.3",
   "com.vividsolutions" % "jts" % "1.13",
